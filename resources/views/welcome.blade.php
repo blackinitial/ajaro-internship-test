@@ -8,6 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
 
         <!-- Styles -->
         <style>
@@ -64,6 +66,123 @@
         </style>
     </head>
     <body>
+        <header>
+            <nav class="navbar navbar-dark bg-dark" style="justify-content: center">
+                <div class="navbar-brand text-uppercase">Kelola Data Barang</div>
+            </nav>
+        </header>
+
+        <main class="my-5">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h5>Data Barang</h5>
+                    <button class="btn btn-success" data-toggle="modal" data-target="#addData">Tambah</button>
+                </div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Kode</th>
+                            <th>Nama</th>
+                            <th>Harga</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1234</th>
+                            <th>Meja</th>
+                            <th>Rp 250.000</th>
+                            <th>
+                                <button class="btn btn-info btn-sm mr-2">Edit</button>
+                                <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteData">Hapus</button>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <!-- add modal -->
+        <div class="modal fade" id="addData" tabindex="-1" role="dialog" aria-labelledby="addDataLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addDataLabel">Input Data Barang</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group row">
+                                <label for="code" class="col-form-label col-2">Kode:</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="code">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="name" class="col-form-label col-2">Nama:</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="description" class="col-form-label col-2">Deskripsi:</label>
+                                <div class="col-10">
+                                    <textarea class="form-control" id="description"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="stock" class="col-form-label col-2">Stok:</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="stock">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="price" class="col-form-label col-2">Harga:</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="price">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="weight" class="col-form-label col-2">Berat:</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="weight">
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <button class="btn btn-success">Tambah</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- delete modal -->
+        <div class="modal fade" id="deleteData" tabindex="-1" role="dialog" aria-labelledby="deleteDataLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteDataLabel">Hapus Data Barang</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>Hapus Barang ini ?</h6>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <button type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -78,22 +197,8 @@
                     @endauth
                 </div>
             @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
         </div>
+
+        <script src="{{ asset('/js/app.js') }}"></script>
     </body>
 </html>
