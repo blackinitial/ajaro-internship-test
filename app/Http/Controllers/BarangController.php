@@ -102,6 +102,8 @@ class BarangController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('barang')->where('id', $id)->delete();
+
+        return redirect('/');
     }
 }

@@ -22,3 +22,4 @@ Route::get('/', 'BarangController@index');
 Route::post('/store', 'BarangController@store');
 Route::get('/edit/{id}', 'BarangController@edit');
 Route::post('/update', 'BarangController@update');
+Route::get('/delete/{id}', 'BarangController@destroy');
