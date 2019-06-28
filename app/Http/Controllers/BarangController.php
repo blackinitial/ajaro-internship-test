@@ -68,7 +68,9 @@ class BarangController extends Controller
      */
     public function edit($id)
     {
-        //
+        $barang = DB::table('barang')->where('id', $id)->get();
+
+        return view('edit', ['barang' => $barang]);
     }
 
     /**
@@ -78,9 +80,18 @@ class BarangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        DB::table('barang')->where('id', $request->id)->update([
+            'kode' => $request->kode,
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi,
+            'stok' => $request->stok,
+            'harga' => $request->harga,
+            'berat' => $request->berat
+        ]);
+
+        return redirect('/');
     }
 
     /**
