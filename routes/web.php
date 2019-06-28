@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+Route::view('/add', 'add');
+Route::view('/edit', 'edit');
+
+Route::get('/', 'BarangController@index');
