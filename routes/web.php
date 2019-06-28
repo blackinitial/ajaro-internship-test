@@ -19,3 +19,4 @@ Route::view('/add', 'add');
 Route::view('/edit', 'edit');
 
 Route::get('/', 'BarangController@index');
+Route::post('/store', 'BarangController@store');

@@ -28,7 +28,7 @@
                         <th class="text-capitalize">{{ $b->nama }}</th>
                         <th>Rp {{ $b->harga }}</th>
                         <th>
-                            <a class="btn btn-info btn-sm mr-2" href="/edit">Edit</a>
+                            <a class="btn btn-info btn-sm mr-2" href="/edit/{{ $b->id }}">Edit</a>
                             <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteData">Hapus</button>
                         </th>
                     </tr>

@@ -9,47 +9,49 @@
               <h5>Tambah Barang</h5>
           </div>
 
-          <form>
+          <form action="/store" method="post">
+              {{ csrf_field() }}
+
               <div class="form-group row">
-                  <label for="code" class="col-form-label col-2">Kode:</label>
+                  <label for="kode" class="col-form-label col-2">Kode:</label>
                   <div class="col-10">
-                      <input type="text" class="form-control" id="code">
+                      <input type="text" class="form-control" id="kode" required name="kode">
                   </div>
               </div>
               <div class="form-group row">
-                  <label for="name" class="col-form-label col-2">Nama:</label>
+                  <label for="nama" class="col-form-label col-2">Nama:</label>
                   <div class="col-10">
-                      <input type="text" class="form-control" id="name">
+                      <input type="text" class="form-control" id="nama" required name="nama">
                   </div>
               </div>
               <div class="form-group row">
-                  <label for="description" class="col-form-label col-2">Deskripsi:</label>
+                  <label for="deskripsi" class="col-form-label col-2">Deskripsi:</label>
                   <div class="col-10">
-                      <textarea class="form-control" id="description"></textarea>
+                      <textarea class="form-control" id="deskripsi" required name="deskripsi"></textarea>
                   </div>
               </div>
               <div class="form-group row">
-                  <label for="stock" class="col-form-label col-2">Stok:</label>
+                  <label for="stok" class="col-form-label col-2">Stok:</label>
                   <div class="col-10">
-                      <input type="text" class="form-control" id="stock">
+                      <input type="text" class="form-control" id="stok" required name="stok">
                   </div>
               </div>
               <div class="form-group row">
-                  <label for="price" class="col-form-label col-2">Harga:</label>
+                  <label for="harga" class="col-form-label col-2">Harga:</label>
                   <div class="col-10">
-                      <input type="text" class="form-control" id="price">
+                      <input type="text" class="form-control" id="harga" required name="harga">
                   </div>
               </div>
               <div class="form-group row">
-                  <label for="weight" class="col-form-label col-2">Berat:</label>
+                  <label for="berat" class="col-form-label col-2">Berat:</label>
                   <div class="col-10">
-                      <input type="text" class="form-control" id="weight">
+                      <input type="text" class="form-control" id="berat" required name="berat">
                   </div>
               </div>
 
               <div class="text-center">
                   <a class="btn btn-secondary" href="/">Batal</a>
-                  <button class="btn btn-success">Tambah</button>
+                  <button class="btn btn-success" type="submit">Tambah</button>
               </div>
 
           </form>

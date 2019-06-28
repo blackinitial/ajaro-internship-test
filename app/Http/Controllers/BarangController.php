@@ -37,7 +37,16 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('barang')->insert([
+            'kode' => $request->kode,
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi,
+            'stok' => $request->stok,
+            'harga' => $request->harga,
+            'berat' => $request->berat
+        ]);
+
+        return redirect('/');
     }
 
     /**
